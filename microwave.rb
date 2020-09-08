@@ -4,6 +4,7 @@ class Microwave
   end
 
   def timer
-    "00:0#{@seconds}"
+    seconds_timer = @seconds.to_s.rjust(2, '0')
+    "00:#{seconds_timer}"
   end
 end
