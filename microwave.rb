@@ -4,14 +4,18 @@ class Microwave
   end
 
   def timer
-    "00:#{ss}"
+    "#{hh}:#{ss}"
   end
 
   private
 
   attr_reader :seconds
 
+  def hh
+    (seconds / 60).to_s.rjust(2, '0')
+  end
+
   def ss
-    seconds.to_s.rjust(2, '0')
+    (seconds % 60).to_s.rjust(2, '0')
   end
 end
