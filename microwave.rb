@@ -12,10 +12,14 @@ class Microwave
   attr_reader :seconds
 
   def hh
-    (seconds / 60).to_s.rjust(2, '0')
+    format_to_display(seconds / 60)
   end
 
   def ss
-    (seconds % 60).to_s.rjust(2, '0')
+    format_to_display(seconds % 60)
+  end
+
+  def format_to_display(time)
+    time.to_s.rjust(2, '0')
   end
 end
