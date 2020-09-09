@@ -1,4 +1,6 @@
 class Microwave
+  SECONDS_IN_A_MINUTE = 60
+
   def initialize(seconds)
     @seconds = seconds
   end
@@ -12,11 +14,11 @@ class Microwave
   attr_reader :seconds
 
   def hh
-    format_to_display(seconds / 60)
+    format_to_display(seconds / SECONDS_IN_A_MINUTE)
   end
 
   def ss
-    format_to_display(seconds % 60)
+    format_to_display(seconds % SECONDS_IN_A_MINUTE)
   end
 
   def format_to_display(time)
