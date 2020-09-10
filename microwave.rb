@@ -2,7 +2,12 @@ class Microwave
   SECONDS_IN_A_MINUTE = 60
 
   def initialize(seconds)
-    @seconds = seconds
+    if seconds >= 100
+      hours = seconds / 100
+      @seconds = hours * 60 - (seconds - hours * 100)
+    else
+      @seconds = seconds
+    end
   end
 
   def timer
