@@ -4,7 +4,7 @@ class Microwave
   def initialize(input)
     if input >= 100
       hours = input / 100
-      @seconds = hours * 60 - (input - hours * 100)
+      @seconds = hours * 60 + (input - hours * 100)
     else
       @seconds = input
     end

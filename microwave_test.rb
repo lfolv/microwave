@@ -24,7 +24,6 @@ class MicrowaveTest < Minitest::Test
   end
 
   def test_one_minute_and_one_second
-    skip
     assert_equal '01:01', Microwave.new(101).timer
   end
 
