@@ -2,12 +2,12 @@ class Microwave
   SECONDS_IN_A_MINUTE = 60
   LIMIT = 100
 
-  def initialize(input)
-    if input >= LIMIT
-      hours = input / LIMIT
-      @seconds = hours * SECONDS_IN_A_MINUTE + (input - hours * LIMIT)
+  def initialize(timer_in_panel)
+    if timer_in_panel >= LIMIT
+      hours = timer_in_panel / LIMIT
+      @seconds = hours * SECONDS_IN_A_MINUTE + (timer_in_panel - hours * LIMIT)
     else
-      @seconds = input
+      @seconds = timer_in_panel
     end
   end
 
