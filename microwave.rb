@@ -4,26 +4,26 @@ class Microwave
 
   def initialize(digits)
     if digits >= LIMIT
-      hours = digits / LIMIT
-     @seconds = hours * SECONDS_IN_A_MINUTE + (digits - hours * LIMIT)
+      h = digits / LIMIT
+     @seconds = h * SECONDS_IN_A_MINUTE + (digits - h * LIMIT)
     else
       @seconds = digits
     end
   end
 
   def timer
-    "%02d:%02d" % [hh, ss]
+    "%02d:%02d" % [hours, seconds]
   end
 
   private
 
   attr_reader :seconds
 
-  def hh
-    seconds / SECONDS_IN_A_MINUTE
+  def hours
+    @seconds / SECONDS_IN_A_MINUTE
   end
 
-  def ss
-    seconds % SECONDS_IN_A_MINUTE
+  def seconds
+    @seconds % SECONDS_IN_A_MINUTE
   end
 end
